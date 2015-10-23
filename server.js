@@ -2,11 +2,18 @@
  * Created by Administrator on 2015-10-19.
  */
 
-var webdriver = require('selenium-webdriver'),
-    chrome = require('selenium-webdriver/chrome');
+var fs = require('fs');
+var dir = './';
+function travel(dir, callback) {
+    fs.readdirSync(dir).forEach(function (file) {
+        var pathname = path.join(dir, file);
 
-var driver = new webdriver.Builder()
-    .forBrowser('chrome')
-    .setChromeOptions(/* ... */)
-    .usingServer('http://www.sunagy.com','utf8')
-    .build();
+        if (fs.statSync(pathname).isDirectory()) {
+            travel(pathname, callback);
+            console.log(pathname);
+        } else {
+            callback(pathname);
+            console.log(pathname);
+        }
+    });
+}
