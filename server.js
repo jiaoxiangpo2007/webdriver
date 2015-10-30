@@ -1,19 +1,15 @@
 /**
  * Created by Administrator on 2015-10-19.
  */
+var childProcess = require('child_process');
+var child = childProcess.spawn('node', ['api.js'], {
+    stdio: [0, 1, 2, 'ipc']
+});
 
-var fs = require('fs');
-var dir = './';
-function travel(dir, callback) {
-    fs.readdirSync(dir).forEach(function (file) {
-        var pathname = path.join(dir, file);
+child.on('message', function (msg) {
+    console.log(msg);
+});
 
-        if (fs.statSync(pathname).isDirectory()) {
-            travel(pathname, callback);
-            console.log(pathname);
-        } else {
-            callback(pathname);
-            console.log(pathname);
-        }
-    });
-}
+
+child.send({hello: 'hello'});
+
