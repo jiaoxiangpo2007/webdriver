@@ -11,15 +11,13 @@ var driver = new webdriver.Builder()
     // .enableVerboseLogging()
     .build();
 
-driver.get('http://www.mazgo.net:9999/Sa/Index/login.html');
-// driver.wait(until.titleIs(''),1000);
+driver.get('http://www.mazgo.net:12980/sa');
 
-driver.findElement(By.id('email')).sendKeys('asmecta@sunagy.com');
-driver.findElement(By.id('password')).sendKeys('111111');
+//登录信息
+var email='asmecta@sunagy.com';
+var password='111111';
 
-driver.findElement(By.id('login')).click();
-
-driver.wait(until.titleIs('SUNAGY'), 1000);
-
-driver.findElement(By.linkText('设备')).click();
-// console.log(driver.getTitle());
+driver.findElement(By.id('email')).sendKeys(email);
+driver.findElement(By.id('password')).sendKeys(password);
+console.log(driver.getTitle());
+driver.findElement(By.css('#login')).click();
