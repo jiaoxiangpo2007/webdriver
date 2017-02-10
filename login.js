@@ -1,5 +1,5 @@
 /**
- * Created by Administrator on 2015-10-19.
+ * Created by jiaox on 2016/11/2.
  */
 
 var webdriver = require('selenium-webdriver'),
@@ -11,10 +11,9 @@ var driver = new webdriver.Builder()
     // .enableVerboseLogging()
     .build();
 
-driver.get('http://www.mazgo.net:12780/sa');
+driver.get('http://www.mazgo.net:9999/sa');
 
 //登录信息
-// var email='srcd@srcd.net';
 var email='asmecta@sunagy.com';
 var password='111111';
 
@@ -22,3 +21,4 @@ driver.findElement(By.id('email')).sendKeys(email);
 driver.findElement(By.id('password')).sendKeys(password);
 console.log(driver.getTitle());
 driver.findElement(By.css('#login')).click();
+

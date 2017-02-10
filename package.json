@@ -1,8 +1,8 @@
 {
   "name": "webdriver",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
+  "description": "",
   "dependencies": {
     "argv": "^0.0.2",
     "mongodb": "^2.1.11",
