@@ -11,7 +11,7 @@ var driver = new webdriver.Builder()
     // .enableVerboseLogging()
     .build();
 
-driver.get('http://www.mazgo.net:12780/sa');
+driver.get('http://www.mazgo.net:12980/admin');
 
 //登录信息
 // var email='srcd@srcd.net';
