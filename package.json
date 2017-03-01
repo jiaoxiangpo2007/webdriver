@@ -8,8 +8,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "/sa": "node server.js",
+    "/admin": "node server.js",
+    "/wb":"node server.js"
   },
   "repository": {
     "type": "git",
