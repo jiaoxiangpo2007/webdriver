@@ -10,7 +10,7 @@ var driver = new webdriver.Builder()
     .build();
 
 //服务器信息
-driver.get('http://www.sunagy.com:9999/Sa');
+driver.get('http://www.sunagy.com:9999/Sa/Index/login.html');
 
 //登录信息
 var email=[
@@ -22,7 +22,7 @@ var email=[
     'eric@qq.com'               //5
 ];
 
-driver.findElement(By.id('email')).sendKeys(email[2]);
+driver.findElement(By.id('email')).sendKeys(email[0]);
 driver.findElement(By.id('password')).sendKeys('111111');
 console.log(driver.getTitle());
 driver.findElement(By.css('#login')).click();
